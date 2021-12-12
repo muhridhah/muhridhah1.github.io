@@ -1,0 +1,59 @@
+{%extends "base.html"%}
+
+{% block _content %}
+<h3>ini adalah halamanku</h3>
+<p>Maka Halaman</p>
+<a href="/Halo/ridha">Klik disini</a>
+<br>
+    <!-- <h4>Halo {{nama}}</h4>
+    {% if lulus == 1 %}
+            <p>Selamat nilai kamu {{nilai}}, kamu dinyatakan lulus</p>
+    {%elif lulus == 2 %}
+            <p>Nilai kamu {{nilai}}, payah harusnya bisa lebih baik lagi</p>
+    {% else %}
+            <p>Nilai kamu {{nilai}}, kamu coba lagi</p>
+    {% endif %} -->
+<br>
+<h3>Hi, {{nama1}} </h3>
+<h5>{% if nilai1 > 90 %}
+    Selamat semoga berkah 
+{% else %}
+    Mohon maaf, banyak banyak berdoa yah
+{% endif %}</h5>
+<br>
+<table class="table table-bordered text-center" >
+    <thead>
+      <tr>
+        <th scope="col" >No</th>
+        <th scope="col">Nama</th>
+        <th scope="col">Nilai</th>
+        <th scope="col">Keterangan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"> 1 </th>
+        <td>{{nama1}}</td>
+        <td>{{nilai1}}</td>
+        <td>{% if nilai1 > 90 %}
+            <div class="text-success"><b>Lulus Banget</b></div> 
+        {% else %}
+            <div class="text-danger"><b>Tidak Lulus</b> </div>
+        {% endif %}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+<ol>
+    <h4>Daftar Mahasiswa</h4>
+    {% for s in mahasiswa %} 
+    <li>
+        {{s}}
+    </li>
+    {%endfor%}
+</ol>
+
+{% endblock %}
